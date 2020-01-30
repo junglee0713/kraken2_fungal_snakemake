@@ -19,13 +19,13 @@ workdir: PROJECT_DIR
 
 rule all:
     input:
-        CLASSIFY_FP + '/all_samples.tsv'
+        CLASSIFY_FP + '/fungal_all_samples.tsv'
 
 rule classic_k2_biom:
     input:
-        CLASSIFY_FP + '/all_samples.biom'
+        CLASSIFY_FP + '/fungal_all_samples.biom'
     output:
-        CLASSIFY_FP + '/all_samples.tsv'
+        CLASSIFY_FP + '/fungal_all_samples.tsv'
     shell:
         """
         biom convert -i {input} -o {output} \
@@ -37,7 +37,7 @@ rule kraken_biom:
     input:
         expand(CLASSIFY_FP + '/{sample}-taxa.tsv', sample = SAMPLES)
     output:
-        CLASSIFY_FP + '/all_samples.biom'
+        CLASSIFY_FP + '/fungal_all_samples.biom'
     shell:
         """
         kraken-biom --max D -o {output} {input}
