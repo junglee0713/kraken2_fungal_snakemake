@@ -1,0 +1,14 @@
+{
+    "__default__" :
+    {
+        "h_vmem" : "10G",
+        "mem_free" : "4G",
+        "m_mem_free" : "4G"
+    },
+    "kraken2_classify" :
+    {
+        "h_vmem" : "10G",
+        "mem_free" : "4G",
+        "m_mem_free" : "4G"
+    }
+}
